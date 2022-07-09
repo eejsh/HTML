@@ -1,0 +1,84 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML 2일차</title>
+</head>
+<style>
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.olcss {
+	width: 150px;
+	list-style: none;
+	margin: 0px; padding: 0px;
+	border: 1px solid red;
+	
+	
+}
+/*padding 앞 들여쓰기 칸 [---대메뉴 ]*/
+.licss {
+	width: 140px; height: 30px;
+	border: 1px solid black;
+/*	padding-left:10px; */
+	padding: 0px 0px 0px 10px;
+	
+/*padding 사용시 width값이 늘어나므로, 적용시킨 값 만큼 width값을 줄여줘야 좋음. */   
+    }
+
+/*마우스 (마우스 오버시 )가져다 갔을 시 선택값 확인가능: 설정한 속성값으로 나옴. */
+.licss:hover {
+background-color : green;
+
+
+}
+
+/*부모 태그가 width가 없을 경우 빈공간까지 100% 적용됨.
+width 잡을 시 자식 태그 width 크기만큼 부모태그 적용하면 깔끔하게 적용됨! 
+float를 사용하지 않을 경우 높이는 자동적으로 적용 됨. */
+/*자식 border height px 까지 잡혀있으면 부모도 잡아줘야됨. 옆으로 나열시는 가로 세로 값 잡아줘야 함. full로 때리면 빈공간에서 5번 메뉴 실행되버림.  */
+.olcss2 {
+	width: 760px;
+	height: 32px;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	border: 1px solid red;
+}
+
+.licss2 {
+	width: 150px;
+	height: 30px;
+	border: 1px solid black;
+	float: left;
+}
+
+/*자식태그에서 float를 사용하면 부모태그에서 height, width값이 사라짐-> 
+자식 값에 맞춰 부모 태그도 맞춰줘야함.
+width *100* 6 = 600
+단, border 값도 들어가있으면 같이 계산해줘야함. 
+*/
+</style>
+<body>
+	<ol class="olcss">
+		<li class="licss">대메뉴1</li>
+		<li class="licss">대메뉴2</li>
+		<li class="licss">대메뉴3</li>
+		<li class="licss">대메뉴4</li>
+		<li class="licss">대메뉴5</li>
+	</ol>
+
+	<br>
+
+	<ol class="olcss2">
+		<li class="licss2">메뉴1</li>
+		<li class="licss2">메뉴2</li>
+		<li class="licss2">메뉴3</li>
+		<li class="licss2">메뉴4</li>
+		<li class="licss2">메뉴5</li>
+	</ol>
+
+
+</body>
+</html>
