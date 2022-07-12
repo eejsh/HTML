@@ -49,37 +49,98 @@ width:1200px;
 height: 400px;
 background-color:  blue;
 margin: 0 auto;
+ text-align:center;
+ 
+ /*  !!span 으로만 사용할 수 있음. 
+ 자식 태그가 inline, inline-block일 경우 text-align:center로 화면 가운데로 정렬할 수 있습니다. 
+ 단, display:inline-block으로 속성변환 후 사용됨.
+ */
 }
 
 .disc{ 
 width: 15px; height: 15px;
  background-color:  black;
  border-radius: 15px; float :left; margin-left: 10px; 
+ 
  }
 
 /*1번째 disc 공백 없애주기.*/
 .nomargin{ margin-left :0px;
 }
+
 .red{
-background-color: red; margin-left: 45%; 
+background-color: red;}
 /*red 기준으로 50%에 위치함. 단, 디스크가 늘어나면 오른쪽으로 디스크 증가함. (강제성이 있음 )*/
+/*
+.red{
+background-color: red; margin-left: 45%; } disc늘어난다는 가정 하에 화면 50% 만 설정함.
+*/
+
+
+/*
+inline , inline-block : span에 주로 사용하는 속성 입니다.
+단, div에 설정하면 width 가 100%로만 설정됨 . 
+inline :  자동 사이즈로 조절이 되나, 줄바꿈을 하지않습니다. 
+(오브젝트 일 경우 width, height가 적용이 되나  div가 텍스트 일 경우 :line-height가 인식을 못함 >사용안됨)
+inline-block :  자동 사이즈로 조절이 되나 줄바꿈을 하지 못함.
+(오브젝트, 텍스트 적용 가능 width, height, line-height 적용가능. )
+*/
+
+.disc_span{ 
+display : inline-block;
+/* margin-left: auto; , margin-right: auto; : 부모 태그 가로 기준으로 왼쪽과 오른쪽을 동일한 사이즈로 계산하여 적용하는 방식입니다.
+단, position이 relative 또는 static 일 경우만 사용이 됩니다.   */
+height:15px;
+margin-left: auto;
+margin-right: auto;
+top : 375px;
+position: relative;
 }
+ 
+
+
+/*[중요] margin:0 auto를 사용할 수 있는 경우
+1. position :absolute 가 아닐때
+2. width 값이 무조건 있어야 가능함 (! inline, inline-block 은 widht 값 별도 지정하지않음)
+*/
+
+
 
 /*width값은 disc 추가 시 밀릴수 있음 : 별도로 width 값 잡지 않는게 필수임.(height만 잡아주기!!) */
 /*disc 그룹 ->disc_span */
-.disc_span{
+/*.disc_span{
 height: 15px; border : 1px solid yellow;
 display: block;
 position:absolute;
 width:100%;
-bottom: 25px;
+bottom: 25px; */
 
 
-/*disc늘어난다는 가정 하에 화면 50% 만 설정함.*/
+/*상품출력
+※여백공간 코드 작성 시 좌우 px를 합친다는 생각으로 퍼블리싱 해야함.
+padding은 전체 크기에서 추가되므로 width 1200-40 =1120, height 40 800-20=760 으로 설정.  (좌우 여백 합치기 )
+상품은 몇개가 추가될지 모르므로 height를 auto로 잡아주면 추가될수록 늘어남!
+*/
+
+.product{width: 1160px; height: auto; 
+margin: 0 auto; 
+padding : 20px, 20px, 0px, 20px;
+
+}
+
+.product_ul{ width: 1160px; height: auto; }
+
+.product_li{ width:250px; height: 300px; background-color: black; float:left; 
+margin:20px;
 
 }
 
 
+.copyright{width: 1200px; height: 100px; background-color: black;
+ margin:0 auto;  clear:both;  color: white; font-size: 15px;
+ 
+}
+ /*위에서 float에서 사용했으므로 clear:both 사용.  상품 height가 auto 이므로 늘어난만큼의 최하단에 위치됨. */
 
 </style>
 </head>
@@ -119,18 +180,42 @@ bottom: 25px;
 
 </span>
 
-
 </div>
 <!-- 상품 출력 파트 -->
-<div>
 
+<!-- 기획서에 맞춰서 갯수 파악하면 됩니다.  -->
+<div class ="product">
+
+<ul class="product_ul">
+<li class = "product_li"></li>
+<li class = "product_li"></li>
+<li class = "product_li"></li>
+<li class = "product_li"></li>
+<li class = "product_li"></li>
+<li class = "product_li"></li>
+<li class = "product_li"></li>
+<li class = "product_li"></li>
+
+</ul>
 </div>
+
 
 <!-- 카피라이터 파트  -->
-<div>
+
+<!-- copyright 2022 :2022년에 만듬 copyright 년도 조심. 저작권과 관련이 있음.
+제작할땐 사이트 닫아서 제작함..
+copyright 지키지 않을 시 한국인터넷정보진흥원에 신고 바로들어감 .. 들어가야되는 정보는 절대중요
+물건 판매? 통신판매 신고들어가야됨.
+판매 없이 회원가입 (로그인기능) 개인정보 담당자 
+판매도 없고 회원가입도 안하면 copyright 만 있어도됨. 
+Copyright ⓒ 2022 / 회사명 : naver corp./ 모든 정보 All Right reserved.  -->
+<div class ="copyright">
+<span>Copyright ⓒ 1999-2022 aa corp. All Right reserved. </span>
+<span> 회사명 , 대표자명, 사업자등록번호, 통신판매번호, <a href="https://ftc.go.kr/bizCommPop.do?wrkr_no=1428138153" target="_blank";> [사업자등록확인링크] </a> </span>
+<span> 대표전화, 개인정보담당자명, 회사대표메일or cs대표메일, 주소. </span>
+
 
 </div>
-
 
 </body>
 </html>

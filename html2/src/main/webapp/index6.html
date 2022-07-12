@@ -16,9 +16,6 @@ body {
 	margin: 0 auto;
 	position: relative;
 }
-
- 
-
  .logo {
 	clear: both;
 	width: 1200px;
@@ -26,10 +23,6 @@ body {
 	background-color: gray;
 	margin: 0 auto;
 }
-
- 
-
-
 /*position : relative 사용 시 margin: 0 auto 사용 가능  0 auto: 화면 중간에 위치시키기.
  position : absolute에 margin:0 auto; 사용 불가  */
 span {
@@ -63,11 +56,10 @@ ul, ol {
 	font-size: 12px;
 }
 
- 
+/*상단 로고 파트*/ 
  .banner { width :1200px; height: 400px; background-color: skyblue ; position: relative;
  margin: 0 auto;  
  } 
-
 .logo1 {
 	width: 240px;
 	height: 50px;
@@ -76,7 +68,6 @@ ul, ol {
 	margin-top: 15px;
 	margin-left: 15px;
 }
-
 .logo2 {
 	width: 600px;
 	height: 50px;
@@ -85,10 +76,9 @@ ul, ol {
 	
 	margin-top: 15px;
 	margin-right: 15px;
-	
 }
 
-
+/*배너*/
 .disc{
 height: 15px;
 list-style: none;
@@ -97,7 +87,6 @@ margin-bottom: 25px;
 margin-left:43%;
 position: absolute;
 }
-
 .licss{
 width:15px; height: 15px; background-color: black;
 border-radius: 10px; float:left; margin-left: 10px;
@@ -106,11 +95,24 @@ border-radius: 10px; float:left; margin-left: 10px;
 background-color: red; margin-left: 0;
 }
 
+/*상품출력*/
+.product{
+width:  1200px;  height: 800px; margin: 0 auto;
+background-color: gray;
+}
+.pd{
+width:250px; height:300px; 
+background-color: black;
+margin:  40px 0px 0px 40px;
+
+
+float:left;
+}
+
+
 </style>
 </head>
 <body>
-
-
 	<!-- 최상단(로그인~고객센터) -->
 	<div class="top">
 		<span class="top_span">
@@ -134,10 +136,7 @@ background-color: red; margin-left: 0;
 
 
 	<!-- 배너파트 -->
-
-
 <div class = "banner">
-
 <ol class ="disc">
 <li class = "licss red"></li>
 <li class = "licss"></li>
@@ -146,21 +145,29 @@ background-color: red; margin-left: 0;
 <li class = "licss"></li>
 </ol>
 </div>
-
-
-
-
-
-
-
-
-
 	<!-- 상품 출력 파트 -->
-	<div></div>
+
+ <span class = "product">
+ 
+ 
+ <div class ="pd">  </div>
+ <div class ="pd">  </div> 
+ <div class ="pd">  </div>
+ <div class ="pd">  </div>
+ 
+ <div class ="pd">  </div>
+ <div class ="pd">  </div>
+ <div class ="pd">  </div>
+ <div class ="pd">  </div>
+ 
+ </span>
+ 
+
+
+
+
 
 	<!-- 카피라이터 파트  -->
-	<div></div>
-
 
 </body>
 </html>
