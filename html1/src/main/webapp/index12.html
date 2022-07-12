@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML 2일차 HTML padding, margin </title>
+<style>
+body{padding:0; margin:0;}
+.box1{width:100px; height:100; background-color : yellow;
+/* margin-left:10px; margin-top:10px; margin-bottom:10px; */
+ margin : 10px 50px 10px 10px;
+ float : left;
+ }
+
+ 
+.box2{width:100px; height:100; background-color:blue; float:left; }
+.box3{width:100px; height:100; background-color:green; clear:both; }
+
+.ulclass
+{
+list-style:none;  /*디스크 삭제. */
+margin:0px;  padding:0px; /*list-style :none; 설정해주고 디스크가 없어진 공백을 margin =0 , padding = 0선언으로 여백도 없애줘야함. */
+float:right;
+margin-right:10px;  /*통째로 움직일 때는 부모태그에 써줘야 함 자식에 넣어줄 경우 각각 들어감*/
+
+}
+/*브라우저 화면 기준 오른쪽 왼쪽 잘 확인하면 margin으로 여백 만들수있음*/
+
+.licss{
+   width: 200px;
+   height: 30px;
+   border: 1px solid black;
+   float: right;
+   text-align: center;
+   line-height: 30px;
+
+ /*float: left 선언 시 ㅁㅁㅁㅁㅁ붙음 
+ 부모에서 float 로 이사 시킴 , licss는 같이움직임 (부모따라감) 
+ 부모-자식 잘 움직이여야됨. 
+ 자식 태그에서 float:left를 사용 시 역순으로 정렬됨.
+ 부모 태그에서 float:right를 통해  순방향  center 정렬 */
+
+}
+
+/*margin : 12시 3시 6시 9시 방향으로 작동됨. 4방향 여백이 모두 같은 수치일 때 사용*/ 
+/*margin-bottom: 자기 기준으로 아래쪽에 있는 오브젝트를 밀어냄.*/
+/*floar left : 자신 기준으로 왼쪽 정렬 margin-right 내옆에 데이터 밀어버림(right는 거의 쓸일이 없음...)*/
+/*float : left (왼쪽정렬), right(오른쪽정렬), center(모든오브젝트 가운데정렬) float 사용시 clear:both 사용하면 위치 초기화 됨. */
+
+</style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+
+<ul class = "ulclass" >
+
+<li class="licss">대메뉴1</li>
+<li class="licss">대메뉴2</li>
+<li class="licss">대메뉴3</li>
+<li class="licss">대메뉴4</li>
+<li class="licss">대메뉴5</li>
+
+</ul>
+
+
+</body>
+</html>

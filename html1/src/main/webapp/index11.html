@@ -1,0 +1,61 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>HTML 2일차 HTML4.0 + CSS 2.0</title>
+</head>
+<style>
+/*margin: bicbix에도 마진 때림*/
+/*태그에 그대로 적용시 .,# 을 사용하지 않음. class, id라고 명시되지 않을 경우 태그 명을 사용하면 됨. */
+body{margin:0; padding:0}   /*안쪽(padding), 바깥쪽(margin) 0사용시 공백을 없앰 */
+ .box{ width:50px; height:50px; background-color:black; }
+ /*margin: 바깥쪽 여백  -값도 사용 가능.(잡아당기기)
+ left, right, bottom, top  */
+.color1{background-color : orange; margin-top:-20px;}
+.color2{background-color : pink; margin-left:20px;}
+.color3{background-color : purple; margin-left:-20px;}
+.color4{background-color : green; margin-top:-20px;}
+
+
+.bigbox{background-color : yellow; width:500px; height:500px;
+padding-left:450px;  padding-top:450px; }
+
+.sbox{background-color : black; width:30px; height:30px; padding-top: 20;}
+
+.ssbox{background-color : white; margin-top:"20px"; width:10; height: 100; }
+
+/*margin 선언후 작은 테이블 안들어감..
+*/
+</style>
+
+<body>
+<div class="box"></div>
+<!-- disalbed : readonly와 비슷하지만 값을 전달 받지는 못합니다. (사용 자체가 안되는 속성값)
+사용자에게 서비스를 제공하지 못할 경우 disabled로 막을 수 있음.
+readonly은 back에서 값 받을수 있으나  disabled 선언하면 눈에 보여도 값 전달이 안됨. 
+disabled 굳이 값 전달할 필요가 없을 경우 , 사용 절대 하지 않을 변수?선언할 때 사용함. 읽기전용 -->
+<!-- disabled 사용 예 : 라디오가 있을 경우 신용카드 결제 시 신한카드: 점검 시 disabled로 잠시 막아둠 -->
+<input type = "text" value="hong" disabled>
+<input type = "checkbox" disabled >  자동로그인 
+<br>
+
+<input type = "radio" name="card" checked> 신한카드
+<input type = "radio" name="card"> 국민카드
+<input type = "radio" name="card" disabled> 하나카드
+<br>
+<br>
+
+<div class="box">박스1</div>
+<div class="box color1">박스2</div>
+<div class="box color2">박스3</div>
+<div class="box color3">박스4</div>
+<div class="box color4">박스5</div>
+<div class="bigbox">
+<div class="sbox">
+<div class="ssbox">  </div>
+
+</div>
+ </div>
+
+
+</body>
+</html>
