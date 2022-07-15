@@ -7,11 +7,12 @@
  	var restel;
  	var resemail;
  	var msg=null;
+ 	
  	if(mem[index]=='Y'){
 		restel = tel[index];
 		resemail = email[index];
 	}else if(mem[index]==='N'){
-		msg = "�덊눜�뚯썝";
+		msg = "탈퇴회원";
 	}
 	
 	//console.log("partb");

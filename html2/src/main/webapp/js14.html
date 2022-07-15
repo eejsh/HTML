@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="U-XA-compatible" content ="ie=edge, chrome=1">
+<title>Javascript 3일차 HTML + Javascript (popup) popup.html</title>
+<script>
+
+//window.open 함수 : 팝업창 (새창) 오픈할 때 사용합니다.
+//팝업창. 내부시스템, 이러닝 에서 자주사용. 일반쇼핑몰에선 팝업창막아서 자주 사용안함.
+//window.open("경로","타이틀","사이즈,스크롤바,보안사항") // 타이틀은 잘 사용안함 <title이 있어서.. 단, 비워놔야됨..> js1.0.떄 나왔음..
+
+window.open("./js12.html", "", "width:500px height:300px");
+
+
+/*function popup(){  
+	window.open("./js11.html","", "width=300 height=200");
+}*/
+
+function popup(){
+	window.open("./popup.html", "", "width=400 height:300");
+	
+}
+
+
+function popup2(){  //팝업창 5개열기.. 반복문사용해서 열수잇음...ㅋ
+	
+	var w=0;
+	while (w<1){
+	window.open("./popup.html", "", "width=400 height:300");
+	w++;
+	}
+	
+}
+
+
+</script>
+
+</head>
+<body>
+
+<input type ="button" value="주소찾기" onclick="popup();">
+<br><br>
+<input type ="text" id="address" readOnly> *주소입력
+<input type ="button" value="팝업" onclick="popup2();">
+
+
+
+</body>
+</html>

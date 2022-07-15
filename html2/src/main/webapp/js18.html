@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-comtable" content="ie=edge, chrome=1">
+
+<title>Javascript 3일차 select </title>
+
+<script>
+
+
+function abc(){
+
+/*	var s = document.getElementById("se");
+	console.log(s.value);   수동.. */ 
+	console.log(s);
+	
+}
+
+</script>
+</head>
+<body>
+<!-- onchange :  option에 대한 선태값이 변경 되면 바로 해당 함수를 호출 합니다. 
+첫번째 의미의  this :  해당 태그에 대한 value값.   value 값을가져가서 사용....! -->
+<select name="se" id="se" onchange="abc(this.value);">   <!-- this.value = select 전체안에 있는 옵션값을 가져오기 통신사 선택 전 값 비우기.-->
+
+ <option value="">[통신사]</option>
+  <option value="SKT">SKT</option>
+   <option value="KT">KT</option>
+    <option value="LGT">LGT</option>
+
+
+
+</body>
+</html>
