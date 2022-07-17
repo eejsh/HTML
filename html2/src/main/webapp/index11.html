@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=Edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML5 HTML5.0 + CSS3.0</title>
+<link rel="stylesheet" type="text/css" href="./index11.css?v=1">
+</head>
+<body>
+
+<!-- header : 최상단에 사용하는 태그 ( 무조건 한번만 사용 한번만씀 ,시멘틱마크업) -->
+<header class="header_css">
+<div class="header_div">  </div> <!-- div는 header, nav, main ,section 보다 하위태그임  태그순서 header, nav, main ,section 선언 후 div사용-->
+</header>
+
+<!-- nav : 대메뉴, 소메뉴 사용 (무조건 한번만 사용, 두개이상사용시 검색이안됨.. nav=메뉴 nav안에 배너 안들어감! 시멘틱마크업 ) -->
+<nav class="nav_css"></nav> 
+<main class="main_css">  <!-- 배너, 상품출력, 각종컨텐츠 , 시멘틱마크업, 최상위태그-->
+
+<section class="section1"> </section> <!-- 배너 , 마크업-->>
+
+<section class="section2"> <!-- 각종 컨텐츠 -->
+<aside class="aside_left"></aside> <!-- 왼쪽 컨텐츠 (독립성이 있음) , section안에 aside, article 넣을수 있고, article안에 section 태그 넣을수 있음.-->
+<article class ="article_right"></article><!-- 오른쪽 컨텐츠 (독립성이 있음)-->
+</section> 
+
+<article class="article_banner"> </article>  <!--이벤트, 중간 배너광고 -->
+
+<figure class="notice"></figure> <!-- figure 한번만 사용: 공지사항, 다이어그램, 이미지, 문서, 갤러리보드 (시멘틱마크업)-->
+
+</main>
+
+
+<footer class ="footer_css"></footer> <!-- copyright에 사용 :고정됨 (시멘틱마크업)-->
+
+
+
+</body>
+</html>
