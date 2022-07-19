@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="U-XA-compatible" content="ie=edge, chrome=1">
+<title>javascript 3일차 데이터값 응용1</title>
+
+<script>
+
+/*http://www.abc.co.kr
+ http://m.abc.co.kr
+ http://abc.co.kr        
+ 데이터 끌고 올때도 문제발생.. cors 발생
+ 3개 다 도메인이 다름  ->서버가 다름!
+ 
+ 도메인이 다를경우 연결 차단.
+ */
+
+// CORS 발생  :  서로다른 도메인 및 IP가 발생할 경우 
+//cross-site, cross-domain 서버없이 해결법
+
+function abc(){
+//	window.opener.reload(); //같은 부모창이라 못슴, 보안상 바뀜
+	
+//	opener.location.reload();  //부모창을 새로 고침.
+	
+//	var z = opener.locatin.reload();
+//	var z = opener.document.mid;
+	
+	
+	/*부모창에 있는 값을 자식 창으로 가져옴 (id로 이용.) */
+	
+	   var z = opener.document.getElementById("mid").value;
+	   alert(z);
+}
+
+</script>
+
+
+</head>
+<body>
+<input type = "button" value="데이터a" onclick ="abc();"> 
+
+
+</body>
+</html>
+

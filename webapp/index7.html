@@ -1,0 +1,46 @@
+<!-- back-end (publisher) HTML, CSS, JS, JAVA, JSP
+     back-end (Front-end) JS, JAVA, JSP  -->
+
+<!DOCTYPE html> 
+<!-- HTML5 사용하는 뜻 
+HTML : 모바일 용으로 같이 나옴. -->
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="with=device-width, initial-scale=1.0">
+<!-- viewport를 사용한 이유는 모바일 웹에서도 사용할 수 있도록 하기 위함.  -->
+<title>HTML 4일차 HTML5.0 + CSS 3.0</title>
+<link rel="stylesheet" type="text/css" href="./index7.css?v=20220701">
+
+<!-- href="./index7.css"  =?v=1 //해당되는 파일을 새로고침  ver=1 → 버전 1. 2022070101 2022.07.01 1번째 파일.
+ 파라미터에 버전 쓰기  jsp코드 사용하면 자동으로 바뀜 -->
+
+<!-- link 태그: css 파일을 로드하기 위해서 사용된 태그입니다.  -->
+
+<body>
+<!-- label : span 태그의 업그레이드 버전. 속성은 비슷하나, 다른점이 있음.
+for 속성 : input type 태그 속성에서 id를 이용하여 핸들링 할 수 있음.
+span: 체크박스 클릭, 이름 클릭안됨. label : 체크박스+이름 클릭 할수있음
+
+속성을 봐야 할수 있는 태그: 마크업 span, label
+ -->
+
+<label class = "box"> </label>
+<input type ="checkbox" id="ck"> <label for="ck"> 자동로그인 </label> <br>
+<input type ="checkbox" id="ck"> <span for="ck"> 자동로그인 </span>  <br>
+<input type ="radio" name="a" id="a1"> <label for="a1">동의함</label>
+<input type ="radio" name="a" id="a2"> <label for="a2">동의안함</label> <br> 
+<!-- text + 검색기능 추가  , datalist : select+input 추가된 기능 -->
+<!-- text에 list라는 속성 추가됨. datalist 태그과 연결시킬 수 있음. datalist는 select의 업그레이드 태그 입니다. id와 list가 연결됨. -->
+<input type ="text" list ="search" >
+<datalist id="search">
+<option>JAVA</option>
+<option>MYSQL</option>
+<option>MSSQL</option>
+<option>HTML</option>
+<option>CSS</option>
+
+</datalist>
+</body>
+</html>
