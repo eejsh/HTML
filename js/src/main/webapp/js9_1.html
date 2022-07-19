@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+var names =["sms", "email", "event","push"]; //name 핸들링 편하게 하려고 배열 선언 name1, name2 .. 숫자붙이면 그대로 배열사용
+function abc(){
+	/*배열 반복문
+	var nm = names[0];
+	//console.log(nm);
+	var test = document.getElementByName(nm);
+	//console.log(test[0].checked);
+
+	f.nm[0].checked=true;
+	document.getElementByName("sms")[0].checked=true;*/
+	
+	var boolen = true;  // 라디오는 둘다 true 가 될수없음. 택1임
+    var code;
+	if(f.all.checked==true){
+		code = 0;
+	}
+	else{
+		code = 1;
+	}
+	var w=0;
+	var test;
+	while(w<names.length){
+		   test = document.getElementsByName(names[w]);
+
+		test[code].checked = boolen;
+		w++;
+	}
+	
+}
+
+</script>
+
+</head>
+<body>
+
+<!-- radio 에 checked 설정 해주면 기본적으로 동의안함에 체크되어있음! -->
+
+<form id="f" name="f">
+
+<p>[해당 광고 서비스를 선택하세요]</p>
+
+<ul>
+<li>SMS 수신 여부 : <input type="radio" name="sms" value="Y" > 동의함 <input type ="radio" name ="sms" value="N" checked>동의안함</li>
+
+<li>이메일 수신 여부 : <input type="radio" name="email" value="Y" > 동의함 <input type ="radio" name ="email" value="N" checked>동의안함</li>
+
+<li>이벤트 수신 여부 : <input type="radio" name="event" value="Y" > 동의함 <input type ="radio" name ="event" value="N" checked>동의안함</li>
+
+<li>푸시알림 수신 여부 : <input type="radio" name="push" value="Y" > 동의함 <input type ="radio" name ="push" value="N" checked>동의안함</li>
+
+</ul>
+
+<label><input type="checkbox" name="all" onclick="abc();"> 전체 서비스에 동의함 </label>
+
+</body>
+</html>
