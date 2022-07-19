@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie-edge, chrome=1">
+
+<title>Javascript 4일차 submit + return </title>
+<script>
+
+function abc(){    //onsubmit : retrun 함수.
+
+if(frm.search.value==""){
+	alert("검색할 단어를 입력하세요");
+	return false;   //입력되면 절대 움직이지 마세요.
+	}
+else{
+	//return true;
+	//return; 
+	frm.submit();  //button일땐 submit사용안함. 단 input type에 submit 사용시 onsubmit, return 필수임.
+	//submit 속성에만 return 무조건 사용하게 됨. 
+
+
+
+}
+}
+
+
+</script>
+
+</head>
+
+<!-- submit의 기본 method는 onsubmit="return abc();"  
+onsubmit 무조건 form 태그에만 사용합니다. 
+-->
+<form>
+<body name ="frm" id="frm" method ="post" action="http://nate.com" onsubmit="return abc();">
+<input type = "text" id="search" name="search">
+<input type ="submit" value="검색">
+</form>
+
+</body>
+</html>

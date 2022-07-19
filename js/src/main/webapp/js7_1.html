@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1;">
+
+<title>javascript 4일차 파라미터 전달 (Form, location)+ js7_1.html</title>
+
+<script>
+//파라미터출력.
+
+var url = window.location.search;
+console.log(url);
+
+var sp = url.split("&bbb=");
+var city = sp[1];
+var sp2 = sp[0].split("?aaa=");
+var mid = sp2[1];
+
+
+</script>
+
+</head>
+<body>
+
+아이디 : <span id = "mid"></span><br>
+국적 : <span id = "city"></span>
+
+</body>
+
+<script>
+
+//Document.getElementById("mid").append=("hong");
+
+document.getElementById("mid").innerText=mid;
+document.getElementById("city").innerText=city;
+
+//append로 많이 찍음.
+</script>
+
+
+</html>
+
