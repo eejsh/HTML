@@ -60,7 +60,7 @@ function searchid(intext){
 
 	
 	if(ck==true){
-	console.log("이름 : "+ users[asd]["aperson"] + " 아이디 : "+ users[asd]["auserid"]);
+	console.log("이름 : "+ users[asd]["aperson"] + "아이디 : "+ users[asd]["auserid"]);
 	  }
 	else{
 		
