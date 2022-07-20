@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Javascript 6일차 외부api js 연동</title>
+<!-- <script src="http://192.168.100.203:8080/js2/js13.js?v=5"></script> -->
+<!-- <script src="http://192.168.100.205:8080/js/js13.js?v=2"></script> -->
+<script src ="./js13.js?v=6"></script>
+<!-- 암호화 시키고 다른 파일 생성 후 주소 알려주면됨 . 원본 소스는 별도 저장 암호화된 코드는 다시 복구못함..
+ -->
+
+<script>
+
+function kakao_call(){
+	
+if(f.mid.value==""){
+	alert("아이디를 입력하세요");
+}else{   //api서버에 넣어주기. call뭘로 보낼껍니까? -> 값 태워서 보내주기
+var result = kakao.login(f.mid.value);  // 값 태워보내기 -> 리턴 받아가시오.. js13.js 의 mid?로 받아감..
+console.log(result);
+}
+	
+	
+}
+
+
+
+</script>
+
+</head>
+<body> <!-- 태워서 보냄 -->
+
+<form name="f" id="f">
+<input type ="text" name="mid" >
+
+
+<input type="button" value="로그인" onclick="kakao_call();">
+</form>
+
+
+</body>
+</html>

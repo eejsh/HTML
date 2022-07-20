@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="id=edge, chrome=1">
+<meta name ="viewport" content="width=device-width, initial-scale=1">
+
+<title>javascript 6일차 history.go</title>
+<script>
+
+function abc(){
+	history.go(-2);  //history.go 란 전페이지 또는 이동한 전전페이지를 설정  사용하는 함수입니다. 로그인, 주소찾기 등 사용.
+		
+}
+
+
+</script>
+</head>
+<body>
+
+<a href="javascript: void abc();">뒤로가기</a>
+
+
+</body>
+<script>
+/*
+ 홍길동
+ ab
+ 25
+ 
+ 강감찬
+ o
+ 29
+ 
+ 이순신
+ b
+ 34
+ hint : 
+ */
+ 
+//테이블 조인 형태의 배열
+const data = {
+	    "members":[
+	        ["홍길동",1],
+	        ["강감찬",2],
+	        ["이순신",3]
+	    ],
+	    "blood":[
+	        [1,"AB형"],
+	        [2,"O형"],
+	        [3,"B형"]
+	    ],
+	    "age":[
+	        [1,"25"],
+	        [2,"29"],
+	        [3,"34"]
+	    ],
+	    "email":[
+	        [1,""], 
+	        [2,"kang@naver.com"],
+	        [3,"leess@nate.com"]
+	    ]
+	}
+	// 1,2,3 고정값,,
+//console.log(data["email"]);   [배열그룹번호][배열값];
+//console.log(data["email"][2][1]);  //leess@nate.com   email key 안에 그룹배열을 확인함.
+//console.log(Object.keys(data));  //key 값 확인.
+//console.log(data["members"])   //사용자 이름
+
+var test = Object.keys(data);
+
+Object.keys(data).forEach(function(a,b,c){
+	data[a].forEach(function(aa,bb,cc){
+//		console.log
+		(data["members"][bb][0]+
+		data["blood"][bb][1]+
+		data["age"][bb][1]+
+		data["email"][bb][1]);
+	});
+		
+});
+
+console.log(data.length); //4
+console.log(data["members"].length); //3
+
+var f;
+for(f in data["members"]){  //데이터 갯수만큼만 돌려야됨.
+
+	Object.keys(data).forEach(function(aa,bb,cc){
+	
+		if(aa=="members"){
+    	console.log(data[aa][f][0]);
+		}
+		else{
+			console.log(data[aa][f][1]);
+		}
+	
+	});
+	
+}
+
+
+</script>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>장바구니 선택창 [a파트]</title>
+</head>
+<body>
+
+<form name="f" id="f" method="get" action="./js_b.html">
+<p>A 파트</p>
+<span>장바구니 시스템[사용자가 구매할 과일을 선택하세요(단 2가지 이상)]</span><br>
+<span id="basket">
+
+</span>
+<input type="button" value="신청완료" onclick="ch();">
+</form>
+
+</body>
+
+
+
+<script>
+
+var b = ["사과","딸기","바나나","키위","파인애플","수박","참외"];
+var w=0;
+var ea = b.length;
+var html,html2,html3,text;
+do{
+   html = document.getElementById("basket");
+   html2 = document.createElement("label");
+   html3 = document.createElement("input");
+   html3.type="checkbox";
+   html3.name="fr";
+   html3.value = w;
+   text = document.createTextNode(b[w]);
+   
+   html2.append(html3);
+   html2.append(text);
+   html.append(html2);
+   
+   w++;
+}while(w<ea);
+
+function ch() {
+   var count=0;
+   var k=0;
+   while(k<ea){
+      if(f.fr[k].checked==true){
+         count++;
+      }
+      k++;
+   }
+   if(count<2){
+      alert("해당 구매하실 과일은 2가지 이상을 선택해야 합니다.");
+   }else{
+      f.submit();
+   }
+}
+
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- //document getElementByid.태그에 있는 id 속성을 사용하여 해당 태그에 접근하여 하고 싶은 작업을 할 때 쓰는 함수입니다! -->
+<!-- function ch(){ -->
+<!-- var count=0; -->
+<!-- var k=0; -->
+<!-- while(k<ea){ -->
+<!-- 	if(f.fr[k].checked==true){ -->
+<!-- 	count++; -->
+<!-- } -->
+<!-- 	k++; -->
+<!-- } -->
+
+<!-- if(count<2){ -->
+<!-- 	alert("해당 구매하실 과일은 2가지 이상을 선택해야 합니다."); -->
+<!-- 	} -->
+<!-- else{ -->
+<!-- 	f.submit(); -->
+<!-- } -->
+
+<!-- } -->
+
+<!-- var b = ["사과", "딸기", "바나나","키위","파인애플","수박","참외"]; -->
+<!-- var ea =b.length; -->
+<!-- var w; -->
+<!-- var html, html2, html3, text; -->
+<!-- do{ -->
+<!-- 	html = document.getElementById("basket"); -->
+<!-- 	html2 = document.createElement("label"); -->
+<!-- 	html3 = dpcument.createElement("input"); -->
+<!-- 	html3.type="checkbox"; -->
+<!-- 	html3.name="fr"; -->
+<!-- 	html3.value=w; //몇번 선택했는지 확인 가능.  -->
+<!-- 	text = document.createTextNode(b[w]);  //배열값 다 들어감. -->
+<!-- 	html2.append(html3); -->
+<!-- 	html2.append(text); -->
+<!-- 	html.append(html2); -->
+<!-- 	w++; -->
+<!-- }while(w<ea); -->
+
+
+
+
+<!-- </script> -->
+<!-- </html> -->
+

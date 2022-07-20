@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-conpatible" content="ie=edge, chrome=1">
+<title>javascript 4일차 submit + button</title>
+<script>
+
+
+function abc(){ //아이디 중복 찾기
+ 	
+	if(frm.mid.value=""){  //name값을 써서 가능. 
+		alert("아이디를 입력하세요.");
+		frm.mid.focus();
+	}else{
+		location.href='http://www.google.com';
+	}
+}
+
+
+function zzz(){  //간편회원 등록
+
+	if(frm.mid.value=""){
+		alert("아이디를 입력하세요.");
+		frm.mid.focus();
+		return false;
+	}
+	else if(frm.mpass.value==""){
+		alert("패스워드를 입력하세요");
+	frm.mpass.focus();
+	return false;
+	}
+	else if(frm.mtel.value=""){
+		alert("휴대폰 번호를 입력하세요");
+		frm.mtel.focus();
+		return false;
+	}
+	else{
+		return true;
+	}
+	
+	//confirm 의 기본코드
+	function kkk(){
+		if(confirm("가입을 취소 하시겠습니까?")){  // 확인파트
+			//confirm 속성 : 확인, 취소 두가지의 답변을 구분할 때 사용합니다. 
+			location.href='http://daun.net';
+		}
+		else{  //취소 파트   
+			location.href='http://jobkorea.co.kr';
+		
+			
+		}
+	}
+
+
+}
+
+</script>
+</head>
+<body>
+
+<form name ="frm" id="frm"  onsubmit="return zzz();" method="post" action ="http://naver.com">
+아이디 : <input type ="text" name = "mid" ><input type="button" value ="중복확인" onclick="abc();"><br>
+패스워드 : <input type = "name" name ="mpass"><br>
+전화번호 : <input type ="text" name="mtel" maxlength="11"> <br>
+<input type = "submit" value ="간편회원가입">
+<input type ="reset" value ="가입취소" onclick="kkk();">
+
+<!-- button 사용시 onclick 사용, submit:onsubmit 
+<input type = "button" onclick="회원가입"> -->
+</form>
+
+</body>
+</html>

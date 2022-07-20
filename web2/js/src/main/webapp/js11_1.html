@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="Ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javasctipt 6일차 node[]</title>
+
+<script>
+
+	var data =["m1","m2","m3","m4","m5","m6"];
+	
+function abc (no){
+	//console.log(no);
+	
+	var m = document.getElementById("menus");
+//	console.log(m.children[0]);  //node형식으로 가져와서 출력함. 메뉴1번
+	
+	var ea =m.children.length;
+	var w=0;
+	
+	while(w<ea){
+		//반복문 function :안됨
+		//핸들링 함수형태의 사용시 반복문 안에 사용할 수 있음 . 단 그외의 반복문 변수로 배열, 번호 등 적용하지는 못함. 
+		m.children[w].onclick=function(w){  //핸들링 function  //반복문안에 function이 들어가면 [w]값은 마지막값만 출력됨. 핸들링힘듬..ㅠ
+		//alert(w);  : 마지막(w) 값만 나옴.
+//	console.log(aa.target.children);
+	console.log(this);
+	  }
+	w++;
+	}
+	
+}
+
+
+
+</script>
+</head>
+<body>
+
+
+<ul id="menus" onclick="abc(this)";>
+<li>메뉴1</li>
+<li>메뉴2</li>
+<li>메뉴3</li>
+<li>메뉴4</li>
+<li>메뉴5</li>
+<li>메뉴6</li>
+
+<!-- <li onclick="abc(5);">메뉴6</li> 1개식 일일히 적용하기..  -->
+
+
+</ul>
+
+
+
+</body>
+</html>

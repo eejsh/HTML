@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javascript 6일차 배열 +foreach + for in</title>
+<style>
+
+.lists, .lists2{ width:400px; height: 30px; font-size:12px; }
+.lists > label, .lists2 > label { width:195px; height: inherit;
+border : 1px solid black; text-align: center; line-height: 30px;
+display: inline-block;/* display : block; foat:left; */
+box-sizing: border-box;
+};
+.lists2{height:auto;}
+
+<!-- -->
+
+.lists3, .lists4{ width:400px; height: 30px; font-size:12px; }
+.lists3 > label, .lists4 > label { width:195px; height: inherit;
+border : 1px solid black; text-align: center; line-height: 30px;
+display: inline-block;/* display : block; foat:left; */
+box-sizing: border-box;
+};
+.lists2{height:auto;}
+
+
+
+</style>
+
+</head>
+<body>
+
+<div class="lists">
+<label>아이디</label>
+<label>고객명</label>
+</div>
+<div class="lists2" id="lists2"> </div>
+
+
+<!-- for in -->
+<br>
+<div class="lists3">
+<label>아이디</label>
+<label>고객명</label>
+</div>
+<div class="lists4" id="lists4"> </div>  
+
+
+
+
+
+
+<input type ="button" value="전체회원보기" onclick="abc();">
+<input type ="button" value="전체회원보기(forin)" onclick="bbb();">
+
+
+
+</body>
+<script>
+
+// for Each + for in 속도가 제일 빠름 : 주로 사용
+
+var data = [
+	["hong", "홍길동"],
+	["lee", "이순신"],
+	["park", "박찬호"],
+	["kim", "김유신"],
+];
+
+function abc(){
+    var obj=document.getElementById("lists2");
+    var label1, label2;
+    var text1, text2;
+     
+    data.forEach(function(a,b,c){
+    label1=document.createElement("label");
+    label2=document.createElement("label");
+    text1=document.createTextNode(a[0]);//아이디
+    text2=document.createTextNode(a[1]);//이름
+    
+    label1.append(text1);
+    label2.append(text2);
+				
+		obj.append(label1, label2);
+		
+		
+	/*	obj.append(label1);
+		obj.append(label2);
+		
+		appendChild는 연속으로 변수값을 가져오지 못합니다.
+		obj.appendChild는 두개 한번에 못씀
+
+		obj.appendChild(label1)
+		obj.appendChild(label2)
+		*/
+		
+		});
+	 
+	}
+
+
+
+data.forEach(function(a,b,c){   //a,b를 주로 많이쓰임
+//forEach는 자리를 선정하여 출력할 수 있음.
+	
+//	console.log(a); // a : 각 그룹별 배열 출력 
+//	console.log(b); // b : 배열의 그룹 index번호
+//	console.log(c); // c : 전체 배열을 반복하여 출력  ,. 거의 안씀. 확인용으로 쓰임.
+	
+//	console.log(a[1]);   // 해당 그룹의 모든 데이터 index에 해당하는 값이 출력됨.
+//	console.log(data[b][1]);  //해당 그룹에서 해당 데이터 인덱스만 출력하게됨.
+	});
+
+
+var a=1;
+for(a in data){  // for in 은 그룹에 해당 되는 배열 인덱스 번호를 가져옴
+//console.log(a);  //그룹별 인덱스번호
+//console.log(data[a][0]);
+}
+
+//===================== 숙제.. for in 으로 바꿔보세요.
+var oob = document.getElementById("lists3");
+var tx1, tx2;
+var la1, la2;
+
+var w=0;
+for(w in data){
+la1 = document.createElement("label")
+la2 = document.createElement("label")
+	
+	
+	
+}
+
+
+
+
+
+
+
+</script>
+</html>

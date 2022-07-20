@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javascript 4일차 HTML 코드생성 (input)</title>
+<script>
+
+
+function abc(){
+var i = document.createElement("input");   // 생성 누르면 input 생성됨..
+/*input에는 type, name, value, className, maxLength*/
+	i.type="password";  //생성 누르면 input type ="text"생성됨 , password, checkbox, submit button 다됨. 
+	i.name="security"; //생성 누르면 name생성됨. input type ="text" name="security" 생성..
+	i.value="";   // 빼줘도 무방함. 사용자 입력 파트 
+	i.className="aa";  // style 에 aa 추가, class="aa" 생성됨.
+	i.maxLength="5";   //5자까지 , maxLength 대소문자 구분함. 
+		
+	document.getElementById("box").append(i);
+}
+
+
+</script>
+<style>
+
+.aa{width:200px; height: 30px; border: 1px solid red; }
+
+
+</style>
+
+</head>
+<body>
+
+
+<div id="box">
+<input type ="button" value="인증번호" onclick="abc();">
+</div>
+<form id="frm" name="frm" method="get" action="./js6_1.html">   <!-- form안에 들어와야함.. -->
+아이디 :  <input type ="text" name="mid" value="hong" readOnly>
+
+<p>설문조사 시스템</p>
+<div id="poll">
+<span>[가장 어려운 과목은 무엇입니까?]</span>
+<br>
+</div>
+
+<input type ="button" value="전송" onclick="oksign();">
+</form>>
+</body>
+<script>
+
+
+function oksign(){
+	if(frm.pollname.value=""){
+		alert("설문조사 해당 사항을 체크 해주세요.");
+	}
+	else{
+		frm.submit();
+		
+	}
+	
+}
+
+
+
+//var ab =["a","b","c","d","e"];
+var ww = 0;
+var label,input,text;
+while(ww<5){
+label = document.createElement("label");
+input = document.createElement("input");  //무조건 input은 바깥쪽 라벨이 붙어야됨 </input> 때문에 버그나기때문에 label, ul등 붙여줘야됨.
+input.type="checkbox"; //
+//input.type="radio";
+
+input.name="pollname";
+input.value=ww+1;      //1~5
+text = document.createTextNode("설문조사"+ww);    //input은 </input>이 없음. 버그.
+//text= document.createTextNode(ab[ww]);  //배열로 받기
+label.append(input);
+label.append(text);
+
+//input.append(text);
+document.getElementById("poll").append(label);
+	ww++;
+}
+
+
+</script>
+</html>

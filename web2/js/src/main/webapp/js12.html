@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Javascript 6일차 복합함수, 메소드함수, 메소드 리턴함수</title>
+
+<script>
+function aaa(){
+	
+	// 복합 함수는 무조건 한개는 return을 사용해야 합니다.
+	// 그 외의 다른 함수는 함수 호출형태로 구성하시면 됩니다. (규칙!)
+	
+	var a="홍길동";
+	var b="이순신";
+	var z = function(){  //복합함수aaa()() function 여러개 사용시 
+		console.log(a);
+	}
+	var j = function(){
+		console.log(b);
+	}
+	j();   // 일반 함수처럼 호출 해야됨. z(); return j; 도 가능. 무조건 1개의 function은 리턴 선언 해야됨.
+	
+	return z;  //리턴은 한번밖에 사용못함. 리턴은 가장 아래에 와야함.
+    }
+	
+	function bbb(){    //java class구조가 됨. 
+		this.a1 =function(){         // java method , 메소드에 대한 this
+		console.log("test1");
+		}
+ 		this.a2=function(){
+ 			console.log("test2");
+ 		}
+	}
+	var h = new bbb(); //인스턴스 호출
+	
+	
+	
+	function kkk(){   //java class
+		this.load = function(v){  //v로 return받음 java setter
+		var j = this.success(v);   //무조건 this로 선언해야됨. 
+		console.log(j);
+			
+		}
+		this.success = function(data){  //java getter
+			var h = data * 10;
+			return h;
+		}
+		this.data = function(){ //배열로드
+			var array =["1","2","3"];
+		}
+		
+	}
+	var zzz= new kkk();  // java class 인스턴스  (메모리에 올리기)
+
+
+</script>
+
+
+</head>
+<body>
+
+<input type ="button" value="복합함수" onclick="aaa()()">
+<input type ="button" value="메소드함수1" onclick="h.a2()">
+<input type ="button" value="메소드함수2" onclick="h.a1()">
+<input type ="button" value="메소드함수3(return)" onclick="zzz.load(5)">
+
+
+</body>
+</html>
