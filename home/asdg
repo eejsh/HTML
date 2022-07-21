@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>결제 파트</title>
+
+<script src ="./c_part.js"></script>
+
+<style>
+.paybox {display:none;}  
+.paybox1{display:none;}
+</style>
+
+</head>
+<body>
+
+<p>결제실 금액 : <span id = "total"></span> </p>  <!-- b파트 총 금액 빈태그에 넣기.. 출력? -->
+
+<p>최종 결제하실 결제방법을 선택해 주시길 바랍니다.</p>
+
+<div> <!-- 라디오묶어주기, radio는 name으로 묶임. value -> views function으로 보낼 값.   -->
+<label><input type ="radio" name="pay" value ="0" onclick="views(this.value)"> 무통장 입금 </label>
+<label><input type ="radio" name="pay" value ="1" onclick="views(this.value)"> 가상 계좌  </label>
+<label><input type ="radio" name="pay" value ="2" onclick="views(this.value)"> 계좌 이체 </label>
+<label><input type ="radio" name="pay" value ="3" onclick="views(this.value)"checked> 신용 카드 </label>
+<label><input type ="radio" name="pay" value ="4" onclick="views(this.value)"> 휴대폰 결제 </label>
+</div>
+
+<!-- pay 결제 방식 선택 -->
+
+<div class="paybox" id="paybox"> 
+ <!-- 선택태그: 사용자가 범위 안에 내용 선택 시 사용.  -->
+<select id = "bankbook">   <!-- 계좌 파트 아이디값으로 남기고,배열 받아서 처리  -->
+<option>무통장입금 계좌 선택  </option>
+<p> 입금명: 홍길 </p>
+</select>
+
+<input type ="text" placeholder ="입금자명 입력"> <!-- text 박스에 출력  -->
+</div>
+
+<div class="paybox1" id = "paybox1">
+<input type ="text" placeholder ="결제하실 핸드폰 번호??">
+</div>
+<p><input type = "button" value="결제하기"></p>
+
+</body>
+
+<script>
+// 결제방법 선택 중 무통장입금,휴대폰 결제.. 
+function views(n) {
+	  if(n==4){
+			  document.getElementById("paybox1").style.display="block";
+			  document.getElementById("paybox").style.display="none";
+		  }
+	  else if(n==0){
+		  document.getElementById("paybox").style.display="block";
+		  document.getElementById("paybox1").style.display="none";
+	  }
+		  else{
+			  document.getElementById("paybox").style.display="none";
+			  
+		  }
+	  console.log(paybox);
+}
+
+//var uri = window.location.serach;  //파라미터가져오기
+var uri = "?total=31000";  // 임의로 지정.
+
+var money = uri.split("?total=")  //파라미터값 배열로 설정.  0:"" 1: b파트 토탈금액
+
+document.getElementById("total").append(money[1]); // span id total을 js객체로 변환?
+var w=0;
+var html = document.getElementById("bankbook");  // 계좌 선택하기. 
+
+// html 에 계좌번호 넣어주기.. 
+
+
+console.log(bank); 
+console.log(bank["bank_list"]);   // key bank, account, holder 3ea
+console.log(bank["bank_list"][1]); //index1번에 있는 데이터 출력. 
+
+var op , aa, bb, cc;
+
+op = document.createElement("option");
+
+
+var f;
+for(f in bank["bank_list"]){
+	console.log(f); //index 번호
+
+	var ff;
+	for(ff in bank["bank_list"][f]){
+		console.log(ff); // key값.
+	
+		
+		op.innerText +=(bank["bank_list"][f][ff]);
+		
+		
+	}
+	html.append(op);
+	
+}
+
+
+
+
+
+
+	// var bank = ["하나은행 608-12-553432 예금주명 : 홍길동","SC은행 323-20-227025 예금주명 : 홍길동","국민은행 64-2342-1134568 예금주명 : 홍길동"];
+	// while(w < bank.length){
+	// html.innerHTML += "<option value =" + bank[w] + ">" +bank[w]+ "</option>"
+
+	// w++;
+	// }
+</script>
+
+</html>
