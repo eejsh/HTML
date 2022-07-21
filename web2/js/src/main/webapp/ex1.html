@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>javascript 6일차 배열 및 object 출력</title>
+<script src="./banner.js"></script> <!-- banner : av이미지, 링크 -->
+<style>
+
+.ulcss{list-style:none; margin: 0; padding: 0; width: 330px; height: auto;}
+.ulcss>li{width: 80px; height: 35px; overflow:hidden; float:left;}
+.ulcss>li>a>img{width: 80px; object-fit:cover;}
+
+</style>
+</head>
+<body>
+<ul id="banner" class="ulcss">
+<li><a href=""><img src=""  title="" ></li>
+
+
+
+
+
+</ul>
+
+
+</body>
+<script>
+// banner.js 배열 형태 먼저 확인해야합니다.
+ console.log(banners);  
+// console.log(banners[0]["p_img"]);
+
+var html = document.getElementById("banner");  //배너 ul 가져오기
+var html_li, html_a, html_img;
+
+banners.forEach(function(aa,bb,cc){  // aa: 배열 bb:index
+// 	console.log(aa);  // 총 6번 돌아감.
+// 	console.log(bb);  // 5ea
+// 	console.log(banners[bb]);// {p_title: '위메프', p_img: './mini/logo_quick_05.png', p_link: 'https://front.wemakeprice.com/'}
+// 	console.log(Object.keys(banners[bb])); //key값 확인함
+	
+		//li, a, img 필요함.  변수가 밖에 있으면 작동 안할수 있음..
+	
+	html_li =document.createElement("li");
+	html_a = document.createElement("a");
+	html_img=document.createElement("img");
+	
+	Object.keys(banners[bb]).forEach(function(a1,a2,a3){ 
+		// a1:key, a2:keyindex
+		//href, src, title 필요함
+		console.log(banners[bb][a1]); //key값에서 
+	 switch(a1){
+	 case "p_title":
+		html_img.title=banners[bb][a1];
+	 break;
+	 case "p_img":
+		html_img.src=banners[bb][a1];
+	 break;
+	 case "p_link":
+		html_a.href=banners[bb][a1];
+	 break;
+		html_img.append();  //타이틀 선언해서 밖으로 찍어줌
+	 }
+	});
+	
+html_a.append(html_img);
+html_li.append(html_a);
+html.append(html_li);  //밖에서 찍으면서 들어오면 편함.
+
+
+});
+
+
+
+
+
+</script>
+</html>

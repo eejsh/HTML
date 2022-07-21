@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javascript 7일차</title>
+<script src="http://192.168.100.77:8080/js/user.js"></script>
+</head>
+<body>
+
+	<table border="1" cellpadding="0" cellspacing="0">
+
+		<thead>
+
+			<tr>
+
+				<th>회원명</th>
+
+				<th>회원레벨</th>
+
+				<th>회원나이</th>
+
+			</tr>
+
+		</thead>
+		
+		
+		<tbody id="tbody">
+		
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</tbody>
+
+
+	</table>
+
+</body>
+<script>
+	var html = document.getElementById("tbody");
+	console.log(person);
+	//console.log(person["member_list"][0]["name"]);
+	var f;
+	var tr;
+	for (f in person["member_list"]) {
+		tr = document.createElement("tr");
+		console.log(f + "key");
+		var ff;
+		var td;
+		for (ff in person["member_list"][f]) {
+		td = document.createElement("td");
+			var code;
+			console.log(ff + "key index");
+			switch (ff) {
+			case "name":
+				code = ff;
+				break;
+			case "age":
+				code = "level";
+				break;
+			case "level":
+				code ="age"
+				break;
+			}
+	//	console.log(person["member_list"][f][code]);
+	td.append(person["member_list"][f][code]);    
+	tr.append(td); 
+		}
+    html.append(tr);
+    
+		
+		
+	}
+</script>
+</html>

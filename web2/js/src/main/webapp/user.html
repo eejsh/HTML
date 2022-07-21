@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-compatible" content="ie=edge, chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>javascript 7일차</title>
+<script src ="http://192.168.100.77:8080/js/user.js"></script> 
+</head>
+
+<div class="dicss">
+
+</div>
+
+<body>
+
+</body>
+<script>
+// console.log(person);
+// console.log(person.member_list);
+var a= Object.keys(person);
+//console.log(a);
+
+
+//배열 확인 , member_list
+var label_n, label_a, label_l, text1, text2, text3;
+
+person.member_list.forEach(function(aa,bb,cc){
+ 
+	 label_n = document.createElement("label");
+	 label_a = document.createElement("label");
+	 label_l = document.createElement("label");
+	 
+ Object.keys(person.member_list[bb]).forEach(function(a1,a2,a3){
+	
+//	 console.log(a1); //key값 name, age, level
+	 console.log(person.member_list[bb][a1]); 
+	 
+	 text1 = document.createTextNode(a1);
+//	 console.log(a1);
+
+	 
+	 
+	 
+ 	});
+  
+ });
+
+
+
+
+</script>
+</html>
